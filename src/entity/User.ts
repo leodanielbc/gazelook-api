@@ -6,7 +6,7 @@ import { Project } from "./Project";
 @Entity("user", { schema: "gazelookdb" })
 export class User {
   @PrimaryGeneratedColumn({ type: "bigint", name: "id" })
-  id: string;
+  id: number;
 
   @Column("varchar", { name: "name", length: 80 })
   name: string;

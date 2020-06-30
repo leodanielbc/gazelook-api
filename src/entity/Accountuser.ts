@@ -35,8 +35,8 @@ export class Accountuser {
   @Column("datetime", { name: "updated_at", nullable: true })
   updatedAt: Date | null;
 
-  @Column("bigint", { name: "idUser", nullable: true })
-  idUser: string | null;
+  @Column("bigint", { name: "idUser" })
+  idUser: number;
 
   @ManyToOne(() => User, (user) => user.accountusers, {
     onDelete: "NO ACTION",

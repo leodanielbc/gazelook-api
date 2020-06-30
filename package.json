@@ -7,14 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clone:db": "npx typeorm-model-generator -h localhost -d gazelookdb -p 3308 -u root -e mysql",
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "node dist/index.js",
-    "clean": "del dist/"
+    "start": "npm run build && node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.707.0",
     "bcryptjs": "^2.4.3",
     "class-validator": "^0.12.2",
     "cors": "^2.8.5",
@@ -22,8 +23,12 @@
     "helmet": "^3.23.3",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
+    "multer": "^1.4.2",
     "mysql": "^2.18.1",
+    "nanoid": "^3.1.10",
     "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
     "typeorm": "^0.2.25"
   },
   "devDependencies": {
@@ -33,7 +38,9 @@
     "@types/helmet": "0.0.47",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/morgan": "^1.9.1",
+    "@types/multer": "^1.4.3",
     "@types/node": "^14.0.14",
+    "nodemon": "^2.0.4",
     "tsc-watch": "^4.2.9",
     "typeorm-model-generator": "^0.4.2",
     "typescript": "^3.9.5"

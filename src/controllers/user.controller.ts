@@ -6,6 +6,7 @@ import config from '../config/config';
 import { Address } from '../entity/Address';
 import { Accountuser } from '../entity/Accountuser';
 import * as bcryptjs from 'bcryptjs';
+import fs from 'fs';
 
 export const getUsers = async (req: Request, res: Response): Promise<Response> => {
     const providers = await getRepository(User).find();
@@ -65,6 +66,20 @@ export const deleteUser = async (req: Request, res: Response): Promise<Response>
         getRepository(User).merge(provider);
         const results = await getRepository(User).save(provider);
         return res.json({ message: "Usuario eliminado" });
+    }
+    return res.status(404).json({ message: "El usuario no existe" });
+}
+
+export const uploadImage = async (req: Request, res: Response): Promise<Response> => {
+    const idUser = req.params.userId;
+    const provider = await getRepository(User).createQueryBuilder("user")
+        .where("user.id = :id", { id: idUser })
+        .getOne();
+    if (provider) {
+        provider.imageUrl = req.file.filename;
+        getRepository(User).merge(provider, req.body);
+        const results = await getRepository(User).save(provider);
+        return res.json({ message: "Imagen Subida satisfactoriamente", data: results });
     }
     return res.status(404).json({ message: "El usuario no existe" });
 }

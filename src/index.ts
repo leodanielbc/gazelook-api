@@ -5,8 +5,10 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { createConnection } from 'typeorm';
 import routes from './routes/index.routes';
-const port = 4000;
 
+
+
+const port = process.env.PORT || 4000;
 
 const app = express();
 createConnection();
