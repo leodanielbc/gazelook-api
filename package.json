@@ -1,0 +1,41 @@
+{
+  "name": "api-gazelook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clone:db": "npx typeorm-model-generator -h localhost -d gazelookdb -p 3308 -u root -e mysql",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "node dist/index.js",
+    "clean": "del dist/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "class-validator": "^0.12.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.25"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "@types/helmet": "0.0.47",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/morgan": "^1.9.1",
+    "@types/node": "^14.0.14",
+    "tsc-watch": "^4.2.9",
+    "typeorm-model-generator": "^0.4.2",
+    "typescript": "^3.9.5"
+  }
+}
