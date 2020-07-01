@@ -27,6 +27,27 @@ si se desea quitar la carpeta dist
 ```
 npm rum clean
 ```
+### Documentación del API.📋
+Luego de ejecutar el proyecto pueden revisar la documentación del API
+```
+http://localhost:4000/api-docs
+```
+### Configuración de Amazon S3.📋
+En el directorio de configuración
+```
+src/config/config.ts
+```
+Pueden poner sus credenciales de la propiedades
+```
+accessKeyId
+secretAccessKey
+```
+En Amazon S3 deben crear dos carpetas
+```
+
+perfilUser -> para las imagenes de perfil de usuario
+contentProject -> para el contenido digital(audio/video) de los proyectos
+```
 ### Dependencias. 📦
 >[aws-sdk](https://www.npmjs.com/package/aws-sdk) - Se utilizo para almacenar archivos en el storage de amazon
 >[bcryptjs](https://www.npmjs.com/package/bcryptjs) - se uso para encriptar contraseñas
