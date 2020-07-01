@@ -1,8 +1,866 @@
 {
     "swagger": "2.0",
     "info": {
+        "description": "Gestión de Proyectos",
         "version": "1.0.0",
         "title": "Gazelook",
-        "description": "Gestión de Proyectos"
+        "contact": {
+            "email": "benitez.leonardo06@gmail.com"
+        }
+    },
+    "host": "localhost:4000",
+    "basePath": "/api",
+    "tags": [
+        {
+            "name": "user",
+            "description": "Operaciones sobre el usuario"
+        }
+    ],
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "paths": {
+        "/user": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Crea el usuario junto con la direccion y cuenta de usuario",
+                "description": "Creación de Usuario, Direccion y Cuenta de Usuario",
+                "operationId": "createUser",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateUser"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Retorna la lista de usuarios",
+                "description": "Retorna la lista de usuarios",
+                "operationId": "getInventory",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/User"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/getImage/{id}": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Retorna la imagen de perfil de usuario",
+                "description": "Obtención de la imagen de perfil de usuario",
+                "operationId": "getImageById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id del usuario",
+                        "required": true,
+                        "type": "number",
+                        "maximum": 10
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "File Image"
+                    }
+                }
+            }
+        },
+        "/user/{id}": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Retorna el Usuario",
+                "description": "Encuentra el usuario a traves del ID",
+                "operationId": "getUserById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del Usuario",
+                        "required": true,
+                        "type": "number",
+                        "format": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/User"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Id no valido"
+                    },
+                    "401": {
+                        "description": "Token no definido"
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Actuliza el usuario a traves del ID",
+                "description": "Actualiza el Usuario",
+                "operationId": "UpdateUser",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del Usuario",
+                        "required": true,
+                        "type": "number",
+                        "format": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/User"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Id no valido"
+                    },
+                    "401": {
+                        "description": "Token no definido"
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            }
+        },
+        "/project/uploadImage/{userId}": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Guardar imagen de perfil de usuario",
+                "description": "Guarda la imagen en S3 amazon",
+                "operationId": "AddImagePerfil",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "Id del Usuario",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "image",
+                        "type": "file",
+                        "description": "parametro de la imagen",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Elementos requeridos"
+                    }
+                }
+            }
+        },
+        "/category": {
+            "post": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "Registra una categoria",
+                "description": "Categorias (mundial, país y local)",
+                "operationId": "CreateCategory",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Elementos requeridos",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Category"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Elementos requeridos"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "Retorna la lista de categorias",
+                "description": "Lista de Categorias",
+                "operationId": "getCategorias",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Category"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/category/{id}": {
+            "get": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "Retorna una categoría",
+                "description": "Retorna la categoría",
+                "operationId": "getCategoriaById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del usuario",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/Category"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Id no valido"
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "Actuliza una categoria a traves del ID",
+                "description": "Actualiza una Categoria",
+                "operationId": "UpdateCategory",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id de la categoria",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Category"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Id no valido"
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "Elimina una categoría",
+                "description": "Elimina la categoria especificada por el ID",
+                "operationId": "DeleteCategoria",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id de la categoría",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Category"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Id no valido"
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            }
+        },
+        "/project/{id}": {
+            "get": {
+                "tags": [
+                    "project"
+                ],
+                "summary": "Retorna un Proyecto",
+                "description": "Retorna el proyecto",
+                "operationId": "getProjectById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id del proyecto",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/User"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "project"
+                ],
+                "summary": "Actuliza un proyecto a traves del ID",
+                "description": "Actualiza un proyecto",
+                "operationId": "UpdateProject",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del proyecto",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Category"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            }
+        },
+        "/project": {
+            "post": {
+                "tags": [
+                    "project"
+                ],
+                "summary": "Registra un proyecto",
+                "description": "Registra un nuevo proyecto",
+                "operationId": "CreateProject",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Elementos requeridos",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Project"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Elementos requeridos"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "project"
+                ],
+                "summary": "Retorna la lista de Proyectos",
+                "description": "Lista de Proyectos",
+                "operationId": "getProjects",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Project"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/project/getImage/{idContent}": {
+            "get": {
+                "tags": [
+                    "contentdigital"
+                ],
+                "summary": "Retorna el contenido digital del proyecto (video/imagen)",
+                "description": "Retorna un archivo de imagen o video",
+                "operationId": "getFileById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "idContent",
+                        "in": "path",
+                        "description": "Id del contenido digital",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get File"
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            }
+        },
+        "/project/updateContent/{idProject}/{idContent}": {
+            "patch": {
+                "tags": [
+                    "contentdigital"
+                ],
+                "summary": "Actualiza el contenido digital del proyecto (video/imagen)",
+                "description": "Actualiza un archivo de imagen o video",
+                "operationId": "UpdateFileId",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "idContent",
+                        "in": "path",
+                        "description": "Id del contenido digital",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "idProject",
+                        "in": "path",
+                        "description": "Id del Proyecto",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "content",
+                        "type": "file",
+                        "description": "parametro de la imagen",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Imagen Actualizada"
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            }
+        },
+        "/project/addcontent/{idProject}": {
+            "post": {
+                "tags": [
+                    "contentdigital"
+                ],
+                "summary": "Guarda la imagen perteneciente al proyecto",
+                "description": "Almacena la imagen en Amazon S3",
+                "operationId": "AddContentProject",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "idProject",
+                        "in": "path",
+                        "description": "Id del Proyecto",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "content",
+                        "type": "file",
+                        "description": "parametro de la imagen",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Elementos requeridos"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "User": {
+            "type": "object",
+            "required": [
+                "name",
+                "lastName",
+                "contactName",
+                "phone"
+            ],
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "contactName": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "imageUrl": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "User"
+            }
+        },
+        "Accountuser": {
+            "type": "object",
+            "required": [
+                "id",
+                "email",
+                "password",
+                "language",
+                "idUser"
+            ],
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "salt": {
+                    "type": "string"
+                },
+                "active": {
+                    "type": "boolean"
+                },
+                "idUser": {
+                    "type": "number"
+                }
+            },
+            "xml": {
+                "name": "Accountuser"
+            }
+        },
+        "Address": {
+            "type": "object",
+            "required": [
+                "id",
+                "country",
+                "city",
+                "postalCode",
+                "idUser"
+            ],
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "string"
+                },
+                "idUser": {
+                    "type": "number"
+                }
+            },
+            "xml": {
+                "name": "Votar"
+            }
+        },
+        "Project": {
+            "type": "object",
+            "required": [
+                "id",
+                "title",
+                "idUser",
+                "shortTitle",
+                "idCategory",
+                "description"
+            ],
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "shortTitle": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "idUser": {
+                    "type": "number"
+                },
+                "idCategory": {
+                    "type": "number"
+                }
+            },
+            "xml": {
+                "name": "Project"
+            }
+        },
+        "Category": {
+            "type": "object",
+            "required": [
+                "name",
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "Category"
+            }
+        },
+        "Contentdigital": {
+            "type": "object",
+            "required": [
+                "digitalContentUrl",
+                "id",
+                "idProject"
+            ],
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "digitalContentUrl": {
+                    "type": "string"
+                },
+                "idProject": {
+                    "type": "number"
+                }
+            },
+            "xml": {
+                "name": "Contentdigital"
+            }
+        },
+        "CreateUser": {
+            "type": "object",
+            "required": [
+                "name",
+                "lastName",
+                "contactName",
+                "phone",
+                "country",
+                "city",
+                "postalCode",
+                "email",
+                "password",
+                "language"
+            ],
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "contactName": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "imageUrl": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "active": {
+                    "type": "boolean"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "User"
+            }
+        }
     }
 }

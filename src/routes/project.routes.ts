@@ -12,7 +12,7 @@ router.patch('/:id', updateProject);
 
 // contentDigital
 router.post('/addcontent/:idProject', multer.single('content'), addContent);
-router.post('/updateContent/:idProject/:idContent', multer.single('content'), updateContent);
+router.patch('/updateContent/:idProject/:idContent', multer.single('content'), updateContent);
 router.get('/getImage/:idContent', getImageContent);
 
 router.delete('/contentdigital/:id', deleteContent);
