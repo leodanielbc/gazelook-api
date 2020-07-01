@@ -191,7 +191,7 @@
                     "user"
                 ],
                 "summary": "Guardar imagen de perfil de usuario",
-                "description": "Guarda la imagen en S3 amazon",
+                "description": "Guarda la imagen en S3 amazon en la carpeta perfilUser",
                 "operationId": "AddImagePerfil",
                 "produces": [
                     "application/json"
@@ -595,7 +595,7 @@
                     "contentdigital"
                 ],
                 "summary": "Guarda la imagen perteneciente al proyecto",
-                "description": "Almacena la imagen en Amazon S3",
+                "description": "Almacena la imagen en Amazon S3 en la carpeta contentProject",
                 "operationId": "AddContentProject",
                 "produces": [
                     "application/json"

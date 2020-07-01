@@ -98,7 +98,7 @@ export const getImageContent = async (req: Request, res: Response): Promise<any>
     if (provider) {
         if (!provider.digitalContentUrl) return res.status(404).json({ message: "El contenido digital del proyecto no existe" });
         const getObjectParametros: any = {
-            Bucket: "gazelook-s3-storage/contentProject",
+            Bucket: `${config.amazon.bucket}/contentProject`,
             Key: `${provider.digitalContentUrl}`
         };
         const path_file = `./temporal/${provider.digitalContentUrl}`;

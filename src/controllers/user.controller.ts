@@ -105,7 +105,7 @@ export const getImageProfile = async (req: Request, res: Response): Promise<any>
     if (provider) {
         if (!provider.imageUrl) return res.status(404).json({ message: "El usuario no tiene imagem" });
         const getObjectParametros: any = {
-            Bucket: "gazelook-s3-storage/perfilUser",
+            Bucket: `${config.amazon.bucket}/perfilUser`,
             Key: `${provider.imageUrl}`
         };
         const path_file = `./temporal/${provider.imageUrl}`;
