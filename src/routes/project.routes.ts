@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createProject, getProjects, getProject, updateProject, addContent } from '../controllers/project.controller';
+import { createProject, getProjects, getProject, updateProject, addContent, updateContent, getImageContent } from '../controllers/project.controller';
 import multer from '../lib/addContentProject';
 
 const router = Router();
@@ -10,6 +10,9 @@ router.get('/', getProjects);
 router.post('/', createProject);
 router.patch('/:id', updateProject);
 
-router.post('/addcontent/:userId', multer.single('content'), addContent);
+// contentDigital
+router.post('/addcontent/:idProject', multer.single('content'), addContent);
+router.post('/updateContent/:idProject/:idContent', multer.single('content'), updateContent);
+router.get('/getImage/:idContent', getImageContent);
 
 export default router;

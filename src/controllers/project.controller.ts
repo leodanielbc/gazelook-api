@@ -8,6 +8,11 @@ import path from 'path';
 import { Project } from '../entity/Project';
 import { Contentdigital } from '../entity/Contentdigital';
 
+const s3 = new AWS.S3({
+    accessKeyId: config.amazon.accessKeyId,
+    secretAccessKey: config.amazon.secretAccessKey
+});
+
 export const createProject = async (req: Request, res: Response): Promise<Response> => {
     try {
         // project
@@ -33,8 +38,8 @@ export const getProjects = async (req: Request, res: Response): Promise<Response
 }
 
 export const addContent = async (req: Request, res: Response): Promise<Response> => {
-    const provider = await getRepository(Project).findOne(req.params.id);
-    if (provider){
+    const provider = await getRepository(Project).findOne(req.params.idProject);
+    if (provider) {
         try {
             // contenDigital
             const contentDigital = new Contentdigital();
@@ -66,4 +71,46 @@ export const updateProject = async (req: Request, res: Response): Promise<Respon
         return res.json({ message: "Proyecto actualizado", data: results });
     }
     return res.status(404).json({ message: "El proyecto no existe" });
+}
+
+export const updateContent = async (req: Request, res: Response): Promise<Response> => {
+    const idProject = req.params.idProject;
+    const idContent = req.params.idContent;
+    const project = await getRepository(Project).createQueryBuilder("project")
+        .where("project.id = :id", { id: idProject })
+        .getOne();
+    if (project) {
+        const content = await getRepository(Contentdigital).createQueryBuilder("contentdigital")
+            .where("contentdigital.id = :id", { id: idContent })
+            .getOne();
+        if (content) {
+            content.digitalContentUrl = req.file.filename;
+            getRepository(Contentdigital).merge(content);
+            const results = await getRepository(Contentdigital).save(content);
+            return res.json({ message: "Contenido Actualizado", data: results });
+        }
+    }
+    return res.status(404).json({ message: "El Proyecto o Contenido no existe" });
+}
+
+export const getImageContent = async (req: Request, res: Response): Promise<any> => {
+    const provider: any = await getRepository(Contentdigital).findOne(req.params.idContent);
+    if (provider) {
+        if (!provider.digitalContentUrl) return res.status(404).json({ message: "El contenido digital del proyecto no existe" });
+        const getObjectParametros: any = {
+            Bucket: "gazelook-s3-storage/contentProject",
+            Key: `${provider.digitalContentUrl}`
+        };
+        const path_file = `./temporal/${provider.digitalContentUrl}`;
+        await s3.getObject(getObjectParametros, (err, data: any) => {
+            if (err) throw err;
+            fs.writeFile(path.resolve(path_file), data.Body, 'binary', (err) => {
+                if (err) throw err;
+                console.log("imagen cargada");
+            });
+        });
+        const file = await path.resolve(path_file);
+        return res.sendFile(file);
+    }
+    return res.status(404).json({ message: "Elemento no encontrado" });
 }
