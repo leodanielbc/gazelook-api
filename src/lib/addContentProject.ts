@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
         fs.readFile(pathReady, (err, data) => {
             if (err) throw err;
             const bucket = {
-                Bucket: "gazelook-s3-storage/perfilUser",
+                Bucket: "gazelook-s3-storage/contentProject",
                 Key: nameFile,
                 Body: data
             }
