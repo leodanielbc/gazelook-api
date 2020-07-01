@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createProject, getProjects, getProject, updateProject, addContent, updateContent, getImageContent } from '../controllers/project.controller';
+import { createProject, getProjects, getProject, updateProject, addContent, updateContent, getImageContent, deleteContent } from '../controllers/project.controller';
 import multer from '../lib/addContentProject';
 
 const router = Router();
@@ -14,5 +14,7 @@ router.patch('/:id', updateProject);
 router.post('/addcontent/:idProject', multer.single('content'), addContent);
 router.post('/updateContent/:idProject/:idContent', multer.single('content'), updateContent);
 router.get('/getImage/:idContent', getImageContent);
+
+router.delete('/contentdigital/:id', deleteContent);
 
 export default router;

@@ -114,3 +114,14 @@ export const getImageContent = async (req: Request, res: Response): Promise<any>
     }
     return res.status(404).json({ message: "Elemento no encontrado" });
 }
+
+export const deleteContent = async (req: Request, res: Response): Promise<Response> => {
+    const provider = await getRepository(Contentdigital).findOne(req.params.id);
+    if (provider) {
+        const data = { nStatus: 0 };
+        getRepository(Contentdigital).delete(provider);
+        //const results = await getRepository(Category).save(provider);
+        return res.json({ message: "Contenido digital eliminado" });
+    }
+    return res.status(404).json({ message: "No existe el contenido" });
+}
