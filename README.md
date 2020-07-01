@@ -41,6 +41,7 @@ Pueden poner sus credenciales de la propiedades
 ```
 accessKeyId
 secretAccessKey
+bucket
 ```
 En Amazon S3 deben crear dos carpetas
 ```
