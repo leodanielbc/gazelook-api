@@ -9,6 +9,13 @@
     "database": "gazelookdb",
     "schema": "",
     "synchronize": true,
-    "entities": ["dist/entity/**/*.js"]
+    "logging": true,
+    "entities": [
+      "src/drivers/typeorm/entities/*{.ts,.js}",
+      "dist/drivers/typeorm/entities/*{.ts,.js}"
+    ],
+    "cli": {
+      "entitiesDir": "src/drivers/typeorm/entities"
+    }
   }
 ]

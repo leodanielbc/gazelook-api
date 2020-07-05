@@ -1,16 +1,17 @@
 import { Request, Response, response } from 'express';
 import { getRepository } from 'typeorm';
 import jwt from "jsonwebtoken";
-import config from '../config/config';
+import config from 'config';
 import fs from 'fs';
 import AWS from 'aws-sdk';
 import path from 'path';
-import { Project } from '../entity/Project';
-import { Contentdigital } from '../entity/Contentdigital';
+import { Project } from '../drivers/typeorm/entities/Project';
+import { Contentdigital } from '../drivers/typeorm/entities/Contentdigital';
 
+let amazon:any = config.get('amazon');
 const s3 = new AWS.S3({
-    accessKeyId: config.amazon.accessKeyId,
-    secretAccessKey: config.amazon.secretAccessKey
+    accessKeyId: amazon.accessKeyId,
+    secretAccessKey: amazon.secretAccessKey
 });
 
 export const createProject = async (req: Request, res: Response): Promise<Response> => {
@@ -98,7 +99,7 @@ export const getImageContent = async (req: Request, res: Response): Promise<any>
     if (provider) {
         if (!provider.digitalContentUrl) return res.status(404).json({ message: "El contenido digital del proyecto no existe" });
         const getObjectParametros: any = {
-            Bucket: `${config.amazon.bucket}/contentProject`,
+            Bucket: `${amazon.bucket}/${amazon.folderproject}`,
             Key: `${provider.digitalContentUrl}`
         };
         const path_file = `./temporal/${provider.digitalContentUrl}`;

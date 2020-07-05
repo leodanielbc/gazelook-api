@@ -1,0 +1,11 @@
+[2020-07-05T18:08:27.534] [INFO] default - listening to port:4000
+[2020-07-05T18:09:12.476] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T18:09:20.861] [INFO] default - Request recibida a /api/category22 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T18:10:02.893] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: POST Body: {"name":"categoria1","description":"categoria 1"} Query: {} Params: {}
+[2020-07-05T18:10:10.968] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T18:10:58.754] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: POST Body: {"name":"","description":""} Query: {} Params: {}
+[2020-07-05T18:11:12.767] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: POST Body: {"name":"categoria2","description":""} Query: {} Params: {}
+[2020-07-05T18:11:45.273] [INFO] default - Request recibida a /api/category/1 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T18:12:28.866] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T18:14:38.454] [INFO] default - listening to port:4000
+[2020-07-05T18:14:42.360] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}

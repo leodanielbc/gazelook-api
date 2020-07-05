@@ -6,6 +6,8 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
+  CreateDateColumn,
 } from "typeorm";
 import { Contentdigital } from "./Contentdigital";
 import { Category } from "./Category";
@@ -27,11 +29,10 @@ export class Project {
   @Column("varchar", { name: "description", nullable: true, length: 255 })
   description: string | null;
 
-  @Column("datetime", { name: "created_at", nullable: true })
-  createdAt: Date | null;
-
-  @Column("datetime", { name: "updated_at", nullable: true })
-  updatedAt: Date | null;
+  @CreateDateColumn()
+  createdAt: Date;
+  @UpdateDateColumn({ nullable: true })
+  updatedAt?: Date;
 
   @Column("bigint", { name: "idUser" })
   idUser: number;

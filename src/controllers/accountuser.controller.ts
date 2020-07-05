@@ -1,6 +1,6 @@
 import { Request, Response, response } from 'express';
 import { getRepository } from 'typeorm';
-import { Accountuser } from '../entity/Accountuser';
+import { Accountuser } from '../drivers/typeorm/entities/Accountuser';
 
 export const getAccountUserId = async (req: Request, res: Response): Promise<Response> => {
     const provider = await getRepository(Accountuser).findOne(req.params.id);

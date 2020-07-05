@@ -5,6 +5,8 @@ import {
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from "typeorm";
 import { User } from "./User";
 
@@ -23,11 +25,10 @@ export class Address {
   @Column("varchar", { name: "postalCode", length: 20 })
   postalCode: string;
 
-  @Column("datetime", { name: "created_at", nullable: true })
-  createdAt: Date | null;
-
-  @Column("datetime", { name: "updated_at", nullable: true })
-  updatedAt: Date | null;
+  @CreateDateColumn()
+  createdAt: Date;
+  @UpdateDateColumn({ nullable: true })
+  updatedAt?: Date;
 
   @Column("bigint", { name: "idUser"})
   idUser: number;

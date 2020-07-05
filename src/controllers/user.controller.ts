@@ -1,18 +1,19 @@
 import { Request, Response, response } from 'express';
 import { getRepository } from 'typeorm';
-import { User } from '../entity/User';
+import { User } from '../drivers/typeorm/entities/User';
 import jwt from "jsonwebtoken";
-import config from '../config/config';
-import { Address } from '../entity/Address';
-import { Accountuser } from '../entity/Accountuser';
+import config from 'config';
+import { Address } from '../drivers/typeorm/entities/Address';
+import { Accountuser } from '../drivers/typeorm/entities/Accountuser';
 import * as bcryptjs from 'bcryptjs';
 import fs from 'fs';
 import AWS from 'aws-sdk';
 import path from 'path';
 
+let amazon:any = config.get('amazon');
 const s3 = new AWS.S3({
-    accessKeyId: config.amazon.accessKeyId,
-    secretAccessKey: config.amazon.secretAccessKey
+    accessKeyId: amazon.accessKeyId,
+    secretAccessKey: amazon.secretAccessKey
 });
 
 export const getUsers = async (req: Request, res: Response): Promise<Response> => {
@@ -105,7 +106,7 @@ export const getImageProfile = async (req: Request, res: Response): Promise<any>
     if (provider) {
         if (!provider.imageUrl) return res.status(404).json({ message: "El usuario no tiene imagem" });
         const getObjectParametros: any = {
-            Bucket: `${config.amazon.bucket}/perfilUser`,
+            Bucket: `${amazon.bucket}/${amazon.folderuser}`,
             Key: `${provider.imageUrl}`
         };
         const path_file = `./temporal/${provider.imageUrl}`;

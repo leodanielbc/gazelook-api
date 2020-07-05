@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import config from "../config/config";
+import config from "config";
 import { getRepository } from "typeorm";
 
 export const checkJwt = async (req: Request, res: Response, next: NextFunction) => {
@@ -11,7 +11,7 @@ export const checkJwt = async (req: Request, res: Response, next: NextFunction) 
     // console.log(tokenTest);
 
     try {
-        jwtPayload = <any>jwt.verify(token, config.jwtSecret);
+        jwtPayload = <any>jwt.verify(token, config.get('jwt_secret'));
 
         // const cApiKey = await getRepository(ApiKeys).find({ where: { cKey: jwtPayload.data.cKey } });
         // if (cApiKey.length == 0) {

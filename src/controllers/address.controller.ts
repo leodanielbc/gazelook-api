@@ -1,6 +1,6 @@
 import { Request, Response, response } from 'express';
 import { getRepository } from 'typeorm';
-import { Address } from '../entity/Address';
+import { Address } from '../drivers/typeorm/entities/Address';
 
 export const getAddressId = async (req: Request, res: Response): Promise<Response> => {
     const provider = await getRepository(Address).findOne(req.params.id);

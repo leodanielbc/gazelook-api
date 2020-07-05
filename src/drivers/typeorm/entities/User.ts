@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn } from "typeorm";
 import { Accountuser } from "./Accountuser";
 import { Address } from "./Address";
 import { Project } from "./Project";
@@ -29,11 +29,10 @@ export class User {
   @Column("tinyint", { name: "active", nullable: true, width: 1 })
   active: boolean | null;
 
-  @Column("datetime", { name: "created_at", nullable: true })
-  createdAt: Date | null;
-
-  @Column("datetime", { name: "updated_at", nullable: true })
-  updatedAt: Date | null;
+  @CreateDateColumn()
+  createdAt: Date;
+  @UpdateDateColumn({ nullable: true })
+  updatedAt?: Date;
 
   @OneToMany(() => Accountuser, (accountuser) => accountuser.idUser2)
   accountusers: Accountuser[];

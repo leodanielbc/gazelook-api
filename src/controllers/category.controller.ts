@@ -1,6 +1,6 @@
 import { Request, Response, response } from 'express';
 import { getRepository } from 'typeorm';
-import { Category } from '../entity/Category';
+import { Category } from '../drivers/typeorm/entities/Category';
 
 export const getCategories = async (req: Request, res: Response): Promise<Response> => {
     const providers = await getRepository(Category).find();

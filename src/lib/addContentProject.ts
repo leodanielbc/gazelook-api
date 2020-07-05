@@ -2,13 +2,14 @@ import multer from 'multer';
 import { nanoid } from 'nanoid';
 import path from 'path';
 
-import config from '../config/config';
+import config from 'config';
 import AWS from 'aws-sdk';
 import fs from 'fs';
 
+let amazon:any = config.get('amazon');
 const s3 = new AWS.S3({
-    accessKeyId: config.amazon.accessKeyId,
-    secretAccessKey: config.amazon.secretAccessKey
+    accessKeyId: amazon.accessKeyId,
+    secretAccessKey: amazon.secretAccessKey
 })
 
 
@@ -24,7 +25,7 @@ const storage = multer.diskStorage({
         fs.readFile(pathReady, (err, data) => {
             if (err) throw err;
             const bucket = {
-                Bucket: `${config.amazon.bucket}/contentProject`,
+                Bucket: `${amazon.bucket}/${amazon.folderproject}`,
                 Key: nameFile,
                 Body: data
             }

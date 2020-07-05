@@ -5,6 +5,8 @@ import {
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
+  CreateDateColumn,
 } from "typeorm";
 import { Project } from "./Project";
 
@@ -17,11 +19,10 @@ export class Contentdigital {
   @Column("varchar", { name: "digitalContentUrl", nullable: true, length: 500 })
   digitalContentUrl: string | null;
 
-  @Column("datetime", { name: "created_at", nullable: true })
-  createdAt: Date | null;
-
-  @Column("datetime", { name: "updated_at", nullable: true })
-  updatedAt: Date | null;
+  @CreateDateColumn()
+  createdAt: Date;
+  @UpdateDateColumn({ nullable: true })
+  updatedAt?: Date;
 
   @Column("bigint", { name: "idProject" })
   idProject: number;
