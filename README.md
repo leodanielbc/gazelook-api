@@ -1,5 +1,5 @@
 # GazeLook 🚀
-
+Aplicación de la Arquitectura THE CLEAN ARCHITECTURE
 ### Requisitos del Proyecto.📋
   * Node.js
   * Mysql
