@@ -1,6 +1,6 @@
 import Joi from '@hapi/joi';
 
-export const UserSchema = Joi.object({
+export const userSchema = Joi.object({
     name: Joi.string()
         .required()
         .messages({
@@ -23,6 +23,13 @@ export const UserSchema = Joi.object({
             "any.required": '{#label} is a required field'
         }),
     phone: Joi.string()
+        .required()
+        .messages({
+            "string.base": 'value of {#label} is invalid',
+            "string.empty": '{#label} cannot be an empty field',
+            "any.required": '{#label} is a required field'
+        }),
+    profileType: Joi.string()
         .required()
         .messages({
             "string.base": 'value of {#label} is invalid',
@@ -73,6 +80,8 @@ export const UserSchema = Joi.object({
             "string.empty": '{#label} cannot be an empty field',
             "any.required": '{#label} is a required field'
         }),
+    active: Joi.boolean()
+        .allow(true),
 })
 // En caso de requerir errores personalizados, revisar posibles tipos de error en https://github.com/hapijs/joi/blob/master/API.md#list-of-errors
 // type.patter.base valida tipo en caso de patter
