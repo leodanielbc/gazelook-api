@@ -9,3 +9,85 @@
 [2020-07-05T18:12:28.866] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
 [2020-07-05T18:14:38.454] [INFO] default - listening to port:4000
 [2020-07-05T18:14:42.360] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T19:50:28.139] [INFO] default - listening to port:4000
+[2020-07-05T19:50:32.203] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T19:50:37.319] [INFO] default - Request recibida a /1 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"1"}
+[2020-07-05T19:50:49.156] [INFO] default - Request recibida a /7 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"7"}
+[2020-07-05T19:52:10.170] [INFO] default - Request recibida a /4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"4"}
+[2020-07-05T19:57:39.948] [INFO] default - Request recibida a /2 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"2"}
+[2020-07-05T19:57:44.260] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"3"}
+[2020-07-05T19:57:50.042] [INFO] default - Request recibida a /5 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"5"}
+[2020-07-05T19:58:00.458] [INFO] default - Request recibida a /7 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"7"}
+[2020-07-05T19:58:04.582] [INFO] default - Request recibida a /1 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"1"}
+[2020-07-05T19:59:09.992] [INFO] default - listening to port:4000
+[2020-07-05T19:59:17.599] [INFO] default - Request recibida a /api/category/4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {}
+[2020-07-05T19:59:30.110] [INFO] default - Request recibida a /api/category/3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {}
+[2020-07-05T19:59:45.524] [INFO] default - Request recibida a /4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"4"}
+[2020-07-05T20:00:38.196] [INFO] default - Request recibida a /4df de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"4df"}
+[2020-07-05T20:01:09.294] [INFO] default - listening to port:4000
+[2020-07-05T20:01:11.496] [INFO] default - Request recibida a /4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"4"}
+[2020-07-05T20:01:16.516] [INFO] default - Request recibida a /44 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"44"}
+[2020-07-05T20:03:43.341] [INFO] default - listening to port:4000
+[2020-07-05T20:03:46.240] [INFO] default - Request recibida a /44 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"44"}
+[2020-07-05T20:05:48.611] [INFO] default - Request recibida a /44 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"44"}
+[2020-07-05T20:41:00.429] [INFO] default - listening to port:4000
+[2020-07-05T20:41:03.712] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T20:41:10.037] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"3"}
+[2020-07-05T20:41:39.286] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3"}
+[2020-07-05T20:41:50.333] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T20:48:25.189] [INFO] default - listening to port:4000
+[2020-07-05T20:48:30.918] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3"}
+[2020-07-05T20:48:56.616] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"","description":"Comunidad"} Query: {} Params: {"id":"3"}
+[2020-07-05T20:49:09.468] [INFO] default - Request recibida a /3dd de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3dd"}
+[2020-07-05T20:53:18.375] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3"}
+[2020-07-05T20:53:24.637] [INFO] default - Request recibida a /api/category/ de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {}
+[2020-07-05T20:53:29.409] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3"}
+[2020-07-05T20:53:39.338] [INFO] default - Request recibida a /1 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"1"}
+[2020-07-05T20:53:43.356] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T20:56:55.533] [INFO] default - listening to port:4000
+[2020-07-05T20:57:15.145] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3"}
+[2020-07-05T20:57:18.675] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"3"}
+[2020-07-05T20:59:16.500] [INFO] default - listening to port:4000
+[2020-07-05T20:59:22.952] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3"}
+[2020-07-05T20:59:36.160] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"3"}
+[2020-07-05T21:03:50.252] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {"id":"3"}
+[2020-07-05T21:04:04.141] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:05:25.394] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3"}
+[2020-07-05T21:05:51.099] [INFO] default - Request recibida a /3s de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3s"}
+[2020-07-05T21:05:56.430] [INFO] default - Request recibida a /6 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"6"}
+[2020-07-05T21:06:01.493] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3"}
+[2020-07-05T21:06:23.590] [INFO] default - listening to port:4000
+[2020-07-05T21:06:34.851] [INFO] default - Request recibida a /3 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: PATCH Body: {"name":"Local","description":"Comunidad"} Query: {} Params: {"id":"3"}
+[2020-07-05T21:06:41.048] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:06:54.533] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: POST Body: {"name":"categoria5","description":"categoria5"} Query: {} Params: {}
+[2020-07-05T21:06:59.493] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:20:14.114] [INFO] default - listening to port:4000
+[2020-07-05T21:20:17.223] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:20:26.313] [INFO] default - Request recibida a /4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"4"}
+[2020-07-05T21:20:32.848] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:22:32.703] [INFO] default - Request recibida a /4ss de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"4ss"}
+[2020-07-05T21:22:38.080] [INFO] default - Request recibida a /4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"4"}
+[2020-07-05T21:23:04.301] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:27:24.640] [INFO] default - listening to port:4000
+[2020-07-05T21:27:29.023] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:27:39.197] [INFO] default - Request recibida a /4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"4"}
+[2020-07-05T21:27:46.432] [INFO] default - Request recibida a /4s de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"4s"}
+[2020-07-05T21:27:53.570] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:28:02.132] [INFO] default - Request recibida a /4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"4"}
+[2020-07-05T21:33:25.131] [INFO] default - listening to port:4000
+[2020-07-05T21:33:32.024] [INFO] default - Request recibida a /4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"4"}
+[2020-07-05T21:35:32.192] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:38:04.002] [INFO] default - listening to port:4000
+[2020-07-05T21:38:07.188] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:38:17.438] [INFO] default - Request recibida a /4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"4"}
+[2020-07-05T21:38:34.305] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:38:48.334] [INFO] default - Request recibida a /4 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"4"}
+[2020-07-05T21:41:55.593] [INFO] default - listening to port:4000
+[2020-07-05T21:41:58.157] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: POST Body: {"name":"categoria5","description":"categoria5"} Query: {} Params: {}
+[2020-07-05T21:42:09.146] [INFO] default - Request recibida a /5 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"5"}
+[2020-07-05T21:42:11.582] [INFO] default - Request recibida a /5 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"5"}
+[2020-07-05T21:44:11.089] [INFO] default - listening to port:4000
+[2020-07-05T21:44:18.669] [INFO] default - Request recibida a /5 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"5"}
+[2020-07-05T21:44:28.421] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: GET Body: {} Query: {} Params: {}
+[2020-07-05T21:44:36.357] [INFO] default - Request recibida a / de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: POST Body: {"name":"categoria5","description":"categoria5"} Query: {} Params: {}
+[2020-07-05T21:44:50.403] [INFO] default - Request recibida a /6 de:  IP => ::1, browser => PostmanRuntime/7.26.1, referer => . Data de la peticion, Method: DELETE Body: {} Query: {} Params: {"id":"6"}

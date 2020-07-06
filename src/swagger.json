@@ -294,8 +294,7 @@
                         "in": "path",
                         "description": "Id del usuario",
                         "required": true,
-                        "type": "string",
-                        "format": "string"
+                        "type": "number"
                     }
                 ],
                 "responses": {

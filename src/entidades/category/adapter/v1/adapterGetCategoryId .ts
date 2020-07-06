@@ -1,8 +1,8 @@
-const makeAdapterCreateCategory = ({ caseCreateCategory, logger } : { caseCreateCategory:any, logger:any }) => {
-    const adapterCreateCategory = async (httpRequest:any) => {
+const makeAdapterGetCategoryId = ({ caseGetCategory, logger } : { caseGetCategory:any, logger:any }) => {
+    const adapterGetCategoryId = async (httpRequest:any) => {
         try {
-            const data = httpRequest.body;
-            const category = await caseCreateCategory({
+            const data = httpRequest.params
+            const category = await caseGetCategory({
                 ...data
             })
             return {
@@ -24,7 +24,7 @@ const makeAdapterCreateCategory = ({ caseCreateCategory, logger } : { caseCreate
             }
         }
     }
-    return adapterCreateCategory
+    return adapterGetCategoryId
 }
 
-export default makeAdapterCreateCategory
+export default makeAdapterGetCategoryId;

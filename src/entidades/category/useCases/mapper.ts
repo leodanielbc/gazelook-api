@@ -10,7 +10,7 @@ const _mapperSingle = (category:any) => {
 
   const mapper = (data:any) => {
     if (!data) {
-      return null
+      return null;
     }
     if (Array.isArray(data)) {
       return data.map(_mapperSingle)
@@ -18,4 +18,4 @@ const _mapperSingle = (category:any) => {
     return _mapperSingle(data)
   }
 
-  export default mapper
+  export default mapper;

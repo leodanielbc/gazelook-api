@@ -1,4 +1,4 @@
-const buildMakeCategory = (schema: any, validatorSchema: any) => {
+export const buildMakeCategory = (schema: any, validatorSchema: any) => {
     return ({
         name = '',
         description = ''
@@ -13,4 +13,15 @@ const buildMakeCategory = (schema: any, validatorSchema: any) => {
     }
 }
 
-export default buildMakeCategory;
+export const buildIdCategory = (schema: any, validatorSchema: any) => {
+    return ({
+        id = 0
+    } = {}) => {
+        let { error, values } = validatorSchema(schema, { id })
+        if (error) throw new Error(error)
+
+        return {
+            getIdCategory: () => id
+        }
+    }
+}

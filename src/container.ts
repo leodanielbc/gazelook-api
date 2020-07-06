@@ -45,7 +45,7 @@ class Server {
                 this.logger.info(`listening to port:${this.port}`)
             });
         }).catch(err => {
-            console.log(`Error de coneccion a la BD: ${err}`);
+            console.log(`Error conection Data Base: ${err}`);
         });
     }
 }

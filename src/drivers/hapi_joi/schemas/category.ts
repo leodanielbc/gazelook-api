@@ -15,7 +15,16 @@ export const CategorySchema = Joi.object({
             "string.empty": '{#label} cannot be an empty field',
             "any.required": '{#label} is a required field'
         }),
-})
+});
+export const CategoryIdSchema = Joi.object({
+    id: Joi.number()
+        .required()
+        .messages({
+            "number.base": 'value of {#label} is invalid',
+            "number.empty": '{#label} cannot be an empty field',
+            "any.required": '{#label} is a required field'
+        }),
+});
 // En caso de requerir errores personalizados, revisar posibles tipos de error en https://github.com/hapijs/joi/blob/master/API.md#list-of-errors
 // type.patter.base valida tipo en caso de patter
 // type.base valida tipo del campo especificado por type (type puede ser string, number....)
